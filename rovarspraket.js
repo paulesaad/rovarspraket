@@ -152,11 +152,10 @@ function findLongestWord(sentence){
     sentarr = sentence.split(" ")
     var longest = ""
     for (var i=0; i<sentarr.length; i++) {
-    	if (sentarr[i].length > longest) {
+    	if (sentarr[i].length > longest.length) {
     		longest = sentarr[i]
     	}
     }
-    console.log(longest)
     return longest
 }
 
