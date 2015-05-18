@@ -59,15 +59,15 @@ console.assert(isNaN(maxOfThree("aaa", "bbb", "ccc")));
  * and returns true if it is a vowel, false otherwise.
  */
 
-function isVowel(car) {
+function isVowel(char) {
     // YOUR CODE HERE
   	var vowstr = "aeiou"
-  	if (typeof car !== 'string') {
+  	if (typeof char !== 'string') {
   		return false
   	} else {
-	  	if (vowstr.indexOf(car) !== -1){
+	  	if (vowstr.indexOf(char) !== -1){
 	  		return true
-	  	} else if (vowstr.toUpperCase().indexOf(car) !== -1) {
+	  	} else if (vowstr.toUpperCase().indexOf(char) !== -1) {
 	  		return true
 	  	} else {
 	  		return false
@@ -129,7 +129,7 @@ function reverse(str){
     // YOUR CODE HERE
     var revstr = ""
     for (var i=0; i<str.length; i++) {
-    	revstr += str.chatAt(str.length-1-i)
+    	revstr += str.charAt(str.length-1-i)
     }
     return revstr
 }
@@ -148,7 +148,16 @@ console.assert(reverse("we don't want no trouble") === "elbuort on tnaw t'nod ew
 
 function findLongestWord(sentence){
     // YOUR CODE HERE
-
+    sentence = sentence.replace("'","")
+    sentarr = sentence.split(" ")
+    var longest = ""
+    for (var i=0; i<sentarr.length; i++) {
+    	if (sentarr[i].length > longest) {
+    		longest = sentarr[i]
+    	}
+    }
+    console.log(longest)
+    return longest
 }
 
 console.assert(findLongestWord("book dogs") === "book")
